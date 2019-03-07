@@ -1,0 +1,9 @@
+<con:soapui-settings xmlns:con="http://eviware.com/soapui/config">
+	<con:setting id="ProxySettings@autoProxy">true</con:setting>
+	<con:setting id="ProxySettings@enableProxy">true</con:setting>
+	<con:setting id="ProxySettings@host"/>
+	<con:setting id="ProxySettings@port"/>
+	<con:setting id="ProxySettings@username"/>
+	<con:setting id="ProxySettings@password"/>
+	<con:setting id="ProxySettings@excludes"/>
+</con:soapui-settings>

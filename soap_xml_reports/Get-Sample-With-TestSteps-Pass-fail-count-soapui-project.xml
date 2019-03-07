@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="d8d1781b-608a-4f25-964f-4941200386e7" activeEnvironment="Default" name="Get_Sample_With_TestSteps_Pass_fail_count" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="4089013c-3639-4667-8e0f-a7dc9e848d20" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://jsonplaceholder.typicode.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint></con:endpoints><con:resource name="1" path="/posts/1" id="ccf7953c-621c-4e24-8d74-9396a7ee2c3a"><con:settings/><con:parameters/><con:method name="1 1" id="e96d86ab-04a0-463a-ab0a-acb1346fff2a" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ns="https://jsonplaceholder.typicode.com/posts/1">ns:Response</con:element></con:representation><con:request name="Request 1" id="b12ddead-a0b7-4d99-b92d-aa92a5861c16" mediaType="application/json"><con:settings/><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="15b5173c-9cb3-4784-adb6-a1f900a1e3c2" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="c577be3b-4f22-4b4a-9cea-f2ebc9a5f36b" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="restrequest" name="REST Request" id="acdb059e-7f32-4aa9-a5fe-ad070b4e4c97"><con:settings/><con:config service="https://jsonplaceholder.typicode.com" methodName="1 1" resourcePath="/posts/1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="c1298cd8-053b-4940-b84d-7ecdfe451ebf" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request/><con:originalUri>https://jsonplaceholder.typicode.com/posts/1</con:originalUri><con:assertion type="GroovyScriptAssertion" id="32716be9-3832-40f1-8a35-16c3c6f9c4bd" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+ //grab the response
+ def ResponseMessage = messageExchange.response.responseContent
+ //define a JsonSlurper
+ def jsonSlurper = new JsonSlurper().parseText(ResponseMessage)
+ //verify the slurper isn't empty
+ assert !(jsonSlurper.isEmpty())
+
+ assert jsonSlurper.userId == 1</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Copy of REST Request" id="1f80bf49-27a7-4ff1-8417-2bbc12115cf7"><con:settings/><con:config service="https://jsonplaceholder.typicode.com" methodName="1 1" resourcePath="/posts/1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Copy of REST Request" id="c1298cd8-053b-4940-b84d-7ecdfe451ebf" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request/><con:originalUri>https://jsonplaceholder.typicode.com/posts/1</con:originalUri><con:assertion type="GroovyScriptAssertion" id="cdda210d-af02-42d6-bd18-0a24f02529e2" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+ //grab the response
+ def ResponseMessage = messageExchange.response.responseContent
+ //define a JsonSlurper
+ def jsonSlurper = new JsonSlurper().parseText(ResponseMessage)
+ //verify the slurper isn't empty
+ assert !(jsonSlurper.isEmpty())
+
+ assert jsonSlurper.id == 1</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Copy of Copy of REST Request" id="50d7b7b0-3105-4388-98fe-b4d32cba193d"><con:settings/><con:config service="https://jsonplaceholder.typicode.com" methodName="1 1" resourcePath="/posts/1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Copy of Copy of REST Request" id="c1298cd8-053b-4940-b84d-7ecdfe451ebf" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request/><con:originalUri>https://jsonplaceholder.typicode.com/posts/1</con:originalUri><con:assertion type="GroovyScriptAssertion" id="247efbad-5cdf-4391-9802-798d173ae64a" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+ //grab the response
+ def ResponseMessage = messageExchange.response.responseContent
+ //define a JsonSlurper
+ def jsonSlurper = new JsonSlurper().parseText(ResponseMessage)
+ //verify the slurper isn't empty
+ assert !(jsonSlurper.isEmpty())
+
+ assert jsonSlurper.userId == 1</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Copy of Copy of Copy of REST Request" id="96e329de-750e-4c1c-b3c3-1135dc12f111"><con:settings/><con:config service="https://jsonplaceholder.typicode.com" methodName="1 1" resourcePath="/posts/1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Copy of Copy of Copy of REST Request" id="c1298cd8-053b-4940-b84d-7ecdfe451ebf" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request/><con:originalUri>https://jsonplaceholder.typicode.com/posts/1</con:originalUri><con:assertion type="GroovyScriptAssertion" id="d3d5cb8d-967c-463c-ac33-552f4c50c9ac" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+ //grab the response
+ def ResponseMessage = messageExchange.response.responseContent
+ //define a JsonSlurper
+ def jsonSlurper = new JsonSlurper().parseText(ResponseMessage)
+ //verify the slurper isn't empty
+ assert !(jsonSlurper.isEmpty())
+
+ assert jsonSlurper.userId == 2</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/><con:tearDownScript>import java.io.*
+import jxl.*
+import jxl.write.*
+
+
+def passed=0
+def  failed=0
+
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def projectPath = groovyUtils.projectPath
+//For Local setup//def inputDataFileName = projectPath+"/SampleGradle/soap_xml_reports/Reporting.xls"
+//For GIT setup//def inputDataFileName = projectPath+"/Reporting.xls"
+def inputDataFileName = projectPath+"/SampleGradle/soap_xml_reports/Reporting.xls"
+def inputDataSheetName = "Teststeps"
+Workbook existingWorkbook = Workbook.getWorkbook(new File(inputDataFileName));
+WritableWorkbook workbookCopy = Workbook.createWorkbook(new File(inputDataFileName), existingWorkbook);
+WritableSheet sheet1 = workbookCopy.getSheet(inputDataSheetName);
+for ( testCaseResult in runner.results )
+{
+    for ( testStepResult in testCaseResult.getResults())
+    {
+    log.info testStepResult.status
+    if (testStepResult.status.toString()=="OK") passed++
+    else failed++
+	}
+
+}
+log.info "passed="+passed+" failed="+failed
+
+Label label = new Label(1, 1, passed.toString());
+sheet1.addCell(label);
+
+Label label1 = new Label(2, 1, failed.toString());
+sheet1.addCell(label1);
+
+
+workbookCopy.write()
+workbookCopy.close()
+log.info "DONE"</con:tearDownScript></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
